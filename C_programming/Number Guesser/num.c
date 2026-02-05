@@ -17,7 +17,7 @@ int main ()
         printf("Congrats, they matched!\n");
         break;
     }
-    else if (i==1 | i==2)
+    else if (i==1 || i==2)
     {
         printf("\nTry again!\n\n");
     }
