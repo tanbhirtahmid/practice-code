@@ -7,8 +7,8 @@ int main() {
     // int x=4;
     // std::cout << x << '\n';
     std::string name;
-    std::cin >> name;
-    std::cout << "Hello " << name;
+    std::getline(std::cin, name);
+    std::cout << "Hello " << name << '\n';
 
     return 0;
 }
