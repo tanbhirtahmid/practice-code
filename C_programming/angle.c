@@ -11,6 +11,7 @@ int main() {
         cosine=cos(angle);
         printf("%d      %f\n", angle, cosine);
     }
+    return 0;
     
 
 
