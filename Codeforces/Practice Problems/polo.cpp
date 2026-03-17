@@ -29,11 +29,11 @@ int main() {
     for (int i = 0; i < n; i++)
     {
 
-            if ((nums[i][0]-1)%k==0)
+            if ( (i!=0 && (nums[i][0]-1)!=nums[i-1][1]) && (nums[i][0]-1)%k==0)
             {
                 count++;
             }
-            if ((nums[i][1]+1)%k==0)
+            if ((i!=n && (nums[i][1]+1)!=nums[i+1][0]) && (nums[i][1]+1)%k==0)
             {
                 count++;
             }

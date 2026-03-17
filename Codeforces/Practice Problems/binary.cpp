@@ -9,11 +9,11 @@ using vllint = vector<long long int>;
 using vchar = vector<char>;
 using vstring = vector<string>;
 
-#define endn '\n'
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 
-void code() {
+int code() 
+{
     int n; cin >> n;
     vint bins(n);
     vint count;
@@ -34,7 +34,7 @@ void code() {
 
     if (n==1 && bins[0]==0)
     {
-        cout << 1 << endn;
+        return 1;
     }
     else if (check>0)
     {
@@ -43,21 +43,36 @@ void code() {
     
     
 
-    if (count.empty()) cout << 0 << endn;
-    else
-    cout << *max_element(all(count)) << endn;
+    if (count.empty()) return 0;
+
+    return *max_element(all(count));
+    
 }
 
-int main() {
+int main() 
+{
     // Fast I/O
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t; 
-    cin >> t;
-    while (t--) {
-        code();
+    int t; cin >> t;
+    // vint ans;
+    // for (int i = 0; i < t; i++)
+    // {
+    //     ans.pb(code());
+    // }
+
+    // for (int i = 0; i < t; i++)
+    // {
+    //     // cout << ans[i] << "\n";
+    //     cout << code() << endl;
+    // }
+
+    while (t--)
+    {
+        cout << code() << "\n";
     }
+    
     
     return 0;
 }

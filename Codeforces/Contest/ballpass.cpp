@@ -15,37 +15,33 @@ using vstring = vector<string>;
 
 void code() {
     int n; cin >> n;
-    vint bins(n);
-    vint count;
-    int check=0;
-    for (int i = 0; i < n; i++)
+    string s; cin >> s;
+    int count=0;
+    // int maxi=-1;
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     if (s[i]=='R')
+    //     {
+    //         count++;
+    //     }
+    //     else if (s[i]=='L')
+    //     {
+    //         count--;
+    //     }
+    //     maxi=max(maxi, count);
+    // }
+
+    for (int i = 0; i < s.size(); i++)
     {
-        cin >> bins[i];
-        if (bins[i]==0)
+        count++;
+        if (s[i]=='L')
         {
-            check++;
-        }
-        else if (bins[i]==1)
-        {
-            count.pb(check);
-            check=0;
+            break;
         }
     }
 
-    if (n==1 && bins[0]==0)
-    {
-        cout << 1 << endn;
-    }
-    else if (check>0)
-    {
-        count.pb(check);
-    }
+    cout << count << endn;
     
-    
-
-    if (count.empty()) cout << 0 << endn;
-    else
-    cout << *max_element(all(count)) << endn;
 }
 
 int main() {

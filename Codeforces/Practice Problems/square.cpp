@@ -14,38 +14,29 @@ using vstring = vector<string>;
 #define all(x) (x).begin(), (x).end()
 
 void code() {
-    int n; cin >> n;
-    vint bins(n);
-    vint count;
-    int check=0;
-    for (int i = 0; i < n; i++)
+    vint x(4), y(4);
+    for (int i = 0; i < 4; i++)
     {
-        cin >> bins[i];
-        if (bins[i]==0)
-        {
-            check++;
-        }
-        else if (bins[i]==1)
-        {
-            count.pb(check);
-            check=0;
-        }
+        cin >> x[i] >>
+         y[i];
     }
+    float hand;
+    vector <float> ans;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            hand=sqrt(pow(x[i]-x[j], 2)+pow(y[i]-y[j], 2));
+            ans.pb(hand);
+        }
+        
+    }
+    ans.erase(remove(all(ans), 0), ans.end());
+    long long int mini = *min_element(all(ans));
 
-    if (n==1 && bins[0]==0)
-    {
-        cout << 1 << endn;
-    }
-    else if (check>0)
-    {
-        count.pb(check);
-    }
+    cout << mini*mini << endn;
     
     
-
-    if (count.empty()) cout << 0 << endn;
-    else
-    cout << *max_element(all(count)) << endn;
 }
 
 int main() {

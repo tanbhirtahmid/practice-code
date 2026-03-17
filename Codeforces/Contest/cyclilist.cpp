@@ -14,38 +14,32 @@ using vstring = vector<string>;
 #define all(x) (x).begin(), (x).end()
 
 void code() {
-    int n; cin >> n;
-    vint bins(n);
-    vint count;
-    int check=0;
+    int n, k, p, m;
+    cin >> n >> k >> p >> m;
+    k--; p--;
+    vint cost(n);
     for (int i = 0; i < n; i++)
     {
-        cin >> bins[i];
-        if (bins[i]==0)
-        {
-            check++;
-        }
-        else if (bins[i]==1)
-        {
-            count.pb(check);
-            check=0;
-        }
+        cin >> cost[i];
     }
 
-    if (n==1 && bins[0]==0)
+    int save=cost[p];
+
+    int sum=0, win=0;
+
+    if (p<k)
     {
-        cout << 1 << endn;
-    }
-    else if (check>0)
-    {
-        count.pb(check);
+        while (sum<m)
+        {
+            sum+=cost[p];
+
+        }
+        
+        
     }
     
     
-
-    if (count.empty()) cout << 0 << endn;
-    else
-    cout << *max_element(all(count)) << endn;
+    
 }
 
 int main() {
