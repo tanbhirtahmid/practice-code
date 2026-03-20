@@ -4,7 +4,7 @@
 #include <cmath>
 using namespace std;
 using vint = vector<int>;
-using vllint = vector<long long int>;
+using vllint = vector<long long  int>;
 using vchar = vector<char>;
 using vstring = vector<string>;
 #define pb push_back
@@ -83,7 +83,7 @@ int main() {
             
             cout << posL+1 << " " << posR+2;
         }
-        else cout << posL+1 << " " << posR-1;
+        // else cout << posR+1 << " " << posL+2;
 
     }
     if (numL<numR)
