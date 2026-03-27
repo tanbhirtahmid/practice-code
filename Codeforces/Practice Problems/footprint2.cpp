@@ -60,6 +60,37 @@ int main() {
             t=itL;
 
     }
+    else 
+    {
+        s=itR+1;
+
+        // for (int i = 0; i < str.size(); i++)
+        // {
+        //     if (str[i]=='L')
+        //     {
+        //         posL=i;
+        //     } 
+        // }
+
+        t=itL;
+
+    }
+    // else if (itF<itR)
+    // {
+    //     s=itR+1;
+
+    //     for (int i = 0; i < str.size(); i++)
+    //     {
+    //         if (str[i]=='F')
+    //         {
+    //             posF=i;
+    //         } 
+    //     }
+
+    //     t=posF;
+
+    // }
+
 
 
 
