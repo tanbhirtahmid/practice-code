@@ -22,18 +22,19 @@ int main() {
 
     int n; cin >> n;
 
-    if (n==1)
-    {
-        cout << 1;
-        return 0;
-    }
-
+    
     vint h(n);
     for (int i = 0; i < n; i++)
     {
         cin >> h[i];
     }
-
+    
+    if (n==1)
+    {
+        cout << 1;
+        return 0;
+    }
+    
     int ans=-1;
 
     for (int i = 0; i < n; i++)
@@ -50,11 +51,11 @@ int main() {
             }
             else break;
         }
-        for (int j = i ; j >= 0; j--)
+        for (int j = i ; j > 0; j--)
         {
             // int y=99999;
 
-            if (h[j+1]>=h[j])
+            if (h[j]>=h[j-1])
             {
                 // y=h[j];
                 x++;
@@ -65,7 +66,7 @@ int main() {
         
     }
     
-    cout << ans;
+    cout << ans+1;
 
     return 0;
 }
