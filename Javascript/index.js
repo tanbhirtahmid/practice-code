@@ -1,4 +1,5 @@
-alert(1+66)
+let hell;
+alert(hell)
 console.log(`Hello`);
 window.alert(`Hi`);
 document.getElementById(`Him`).textContent=`Die`;
