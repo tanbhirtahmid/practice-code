@@ -4,26 +4,28 @@ void code()
 {
     int n;
     scanf("%d", &n);
-    int arr[n];
-    long long int count = n;
+
+    long int arr[n];
 
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%ld", &arr[i]);
     }
-    
+    long int mini=10e7;
     for (int i = 0; i < n; i++)
     {
-        for (int j = i+1; j < count; j++)
+        for (int j = i+1; j < n; j++)
         {
-            if (arr[i]<=arr[j])
+            long int temp = arr[i] + arr[j] + j - i;
+            if (temp < mini)
             {
-                count++;
+                mini = temp;
             }
-            
         }
         
     }
+
+    printf("%d\n", mini);
     
 }
 
@@ -35,7 +37,6 @@ int main() {
     {
         code();
     }
-    
 
     return 0;
 }
