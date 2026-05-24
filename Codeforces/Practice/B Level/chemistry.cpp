@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 using vint = vector<int>;
@@ -19,67 +16,68 @@ void fastIO() {
     cin.tie(nullptr);
 }
 
+void openfile()
+{
+    freopen("/home/sf/Documents/Programing/KU CSE/Input files/input.md", "r", stdin);
+}
+
 void code() {
     int n, k; 
     cin >> n >> k;
     string s;
     cin >> s;
 
-    vint chars;
+    set <char> dis;
 
-    sort(all(s));
-    int count=0;
-    for (int i = 0; i < n-1; i++)
+    for (int i = 0; i < s.size(); i++)
     {
-        if (s[i]!=s[i+1])
+        dis.insert(s[i]);
+    }
+
+    vint num;
+
+    auto it = dis.begin();
+
+    for (it = dis.begin(); it != dis.end(); it++)
+    {
+        num.pb(count(all(s), *(it)));
+    }
+
+    long long int odd=0, even=0, rem=n-k;
+
+    for (int i = 0; i < num.size(); i++)
+    {
+        if (num[i]%2==0)
         {
-            chars.pb(count);
-            count=0;
+            even++;
         }
-
-        count++;
-        
-    }
-    
-    if (s[n-2]!=s[n-1])
-    {
-        chars.pb(1);
+        else odd++;
     }
 
-    sort(all(chars));
-
-    // for (int i = 0; i < chars.size(); i++)
-    // {
-    //     if (chars[i]%2!=0)
-    //     {
-    //         /* code */
-    //     }
-        
-    // }
-    
-
-
-    if ((n-k)%2==0)
+    if(rem%2==0)
     {
-        while (int i=0, (k!=0 || odd))
+        for (int i = 0; i < count; i++)
         {
-            if (chars[i%chars.size()]%2!=0)
-            {
-                chars[i%chars.size()]
-            }
-            
+            /* code */
         }
         
-        
     }
-    else
     
-    
-    
+
+    int i=0;
+    for (it = dis.begin(); it != dis.end(); it++)
+    {
+        cout << *(it) << "=" << num[i] << endn;
+        i++;
+    }
+
+    // cout << endn << "----" << endn;
 }
 
 int main() {
     fastIO();
+
+    openfile();
 
     int t;
     cin >> t;
