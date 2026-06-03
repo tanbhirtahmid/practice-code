@@ -11,7 +11,8 @@ using vstring = vector<string>;
 #define all(x) (x).begin(), (x).end()
 
 // Fast I/O setup
-void fastIO() {
+void fastIO() 
+{
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 }
@@ -22,44 +23,33 @@ void openfile()
 }
 
 int code() {
-    
-    long long n;
-    cin >> n;
+    long long a, b, k;
+    cin >> a >> b >> k;
 
-    if (n%2!=0 && n!=1)
+    if(a <= k && b <=k)
     {
-        cout << "YES" << endn;
+        cout << 1 << endn;
         return 0;
     }
-    else
+    else if(a%k==0 && b%k==0)
     {
-        for (long long int i = n/2; i!=0 ; i=i/2)
-        {
-            if(i%2!=0 && i!=1)
-            {
-
-                cout << "YES" << endn;
-                return 0;
-
-            }
-        }
-        
+        cout << 1 << endn;
+        return 0;
     }
-
-    cout << "NO" << endn;
-    return 0;
-    
+    else if (a==b)
+    {
+        cout << 1 << endn;
+        return 0;
+    }
     
 }
 
 int main() {
     fastIO();
-    // openfile();
 
     int t;
     cin >> t;
-    while (t--) 
-    {
+    while (t--) {
         code();
     }
 

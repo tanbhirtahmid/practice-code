@@ -21,33 +21,37 @@ void openfile()
     freopen("/home/sf/Documents/Programing/KU CSE/Input files/input.md", "r", stdin);
 }
 
-int code() {
-    
+void code() {
     long long n;
     cin >> n;
 
-    if (n%2!=0 && n!=1)
+    vllint div;
+
+    for (long long i = 1; i <= n; i++)
     {
-        cout << "YES" << endn;
-        return 0;
+        if(n%i==0) div.pb(i);
     }
-    else
+
+    long long mx=1;
+
+    for (long long i = 0; i < div.size()-1; i++)
     {
-        for (long long int i = n/2; i!=0 ; i=i/2)
+        if(div[i]==div[i+1]-1)
         {
-            if(i%2!=0 && i!=1)
+            long long int l = 0, r =  0;
+            l=div[i];
+            while (i < div.size()-1 && div[i]==div[i+1]-1)
             {
-
-                cout << "YES" << endn;
-                return 0;
-
+                r = div[i+1];
+                mx = max(mx, r-l+1);
+                i++;
             }
+            
+            
         }
-        
     }
 
-    cout << "NO" << endn;
-    return 0;
+    cout << mx << endn;
     
     
 }
@@ -58,8 +62,7 @@ int main() {
 
     int t;
     cin >> t;
-    while (t--) 
-    {
+    while (t--) {
         code();
     }
 

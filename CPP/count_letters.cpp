@@ -17,12 +17,30 @@ void fastIO() {
 int main() {
     fastIO();
 
-    int arr[]={1, 2, 54, 343};
+    string s;
+    cin >> s;
 
-    for(int i : arr)
+    set <char> dis;
+
+    for (int i = 0; i < s.size(); i++)
     {
-        cout << i << endn;
+        dis.insert(s[i]);
     }
+
+    // vint ct;
+
+    auto it = dis.begin();
+
+    for (int i = 0; i < dis.size(); i++)
+    {
+        int n = count(all(s), *it);
+
+        cout << *it << " : " << n << endn;
+
+        it++;
+    }
+    
+    
 
     return 0;
 }
