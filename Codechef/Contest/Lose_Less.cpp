@@ -17,25 +17,8 @@ void fastIO() {
 }
 
 void code() {
-    int n;
-    cin >> n;
-    vstring p1(n), p2(n), p3(n);
-
-    for (int i = 0; i < n; i++)
-    {
-        cin >> p1[i];
-    }
-    
-    for (int i = 0; i < n; i++)
-    {
-        cin >> p2[i];
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        cin >> p3[i];
-    }
-    
+    int m, n;
+    cin >> m >> n;
 }
 
 int main() {
